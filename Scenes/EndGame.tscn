@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/EndGame.gd" type="Script" id=1]
+[ext_resource path="res://Restart_Button.tres" type="StyleBox" id=2]
+
+[sub_resource type="Theme" id=1]
+Button/colors/font_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = ExtResource( 2 )
+Button/styles/focus = ExtResource( 2 )
+Button/styles/hover = ExtResource( 2 )
+Button/styles/normal = ExtResource( 2 )
+Button/styles/pressed = ExtResource( 2 )
+
+[node name="EndGame" type="Control"]
+self_modulate = Color( 0.843137, 0.843137, 0.843137, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -64.0
+margin_top = -48.0
+margin_right = 64.0
+margin_bottom = -16.0
+theme = SubResource( 1 )
+custom_colors/font_color = Color( 0.933333, 0.933333, 0.933333, 1 )
+text = "(R)estart"
+
+[node name="Scores" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.0
+margin_top = -72.0
+margin_right = 33.0
+margin_bottom = 72.0
+custom_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="Scores"]
+margin_right = 66.0
+margin_bottom = 14.0
+text = "Top Times"
+align = 1
+
+[node name="Time0" type="Label" parent="Scores"]
+margin_top = 26.0
+margin_right = 66.0
+margin_bottom = 40.0
+text = "0"
+align = 1
+
+[node name="Time1" type="Label" parent="Scores"]
+margin_top = 52.0
+margin_right = 66.0
+margin_bottom = 66.0
+text = "0"
+align = 1
+
+[node name="Time2" type="Label" parent="Scores"]
+margin_top = 78.0
+margin_right = 66.0
+margin_bottom = 92.0
+text = "0"
+align = 1
+
+[node name="Time3" type="Label" parent="Scores"]
+margin_top = 104.0
+margin_right = 66.0
+margin_bottom = 118.0
+text = "0"
+align = 1
+
+[node name="Time4" type="Label" parent="Scores"]
+margin_top = 130.0
+margin_right = 66.0
+margin_bottom = 144.0
+text = "0"
+align = 1
+[connection signal="pressed" from="Button" to="." method="restart"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/EnemySpawner.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/TimeElapsed.gd" type="Script" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 400, 500 )
+
+[node name="EnemySpawner" type="Node" parent="."]
+editor/display_folded = true
+script = ExtResource( 2 )
+
+[node name="Container" type="Node" parent="EnemySpawner"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+editor/display_folded = true
+anchor_right = 1.0
+margin_top = 14.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer"]
+margin_right = 398.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Time"
+align = 2
+
+[node name="TimeElapsed" type="Label" parent="CanvasLayer/HBoxContainer"]
+margin_left = 402.0
+margin_right = 800.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "0.0"
+script = ExtResource( 3 )
